@@ -1,3 +1,7 @@
-FROM alpine
-COPY hello.sh /
-CMD ["/hello.sh"]
+FROM alpine:latest
+
+WORKDIR /usr/local/bin/
+
+COPY gopath/bin/myapp .
+
+ENTRYPOINT ["/usr/local/bin/myapp"]
